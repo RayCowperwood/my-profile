@@ -1,149 +1,117 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Обо мне — Андрей</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Бывший нормальный человек</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
   <style>
-    :root {
-      --bg-light: #f4f4f4;
-      --text-light: #333;
-      --bg-dark: #ffffff;
-      --text-dark: #333;
-      --card-light: #ffffff;
-      --card-dark: #f1f1f1;
-      --primary: #007BFF;
-      --primary-dark: #0056b3;
-    }
-
+    header img {
+  border-radius: 50%;
+  width: 150px;
+  height: 150px;
+  margin-top: 1rem;
+  object-fit: cover; /* Добавлено */
+}
+    * { box-sizing: border-box; }
     body {
-      font-family: Arial, sans-serif;
-      background-color: var(--bg-light);
-      color: var(--text-light);
+      margin: 0;
+      font-family: 'Roboto', sans-serif;
+      background-color: #f4f4f4;
+      color: #333;
+      line-height: 1.6;
+    }
+    header {
+      background-color: #222;
+      color: #fff;
+      padding: 2rem 1rem;
       text-align: center;
-      padding: 50px;
-      transition: background 0.3s, color 0.3s;
     }
-
-    .container {
-      background: var(--card-light);
-      padding: 30px;
-      border-radius: 10px;
-      display: inline-block;
-      max-width: 400px;
-      width: 90%;
-      box-shadow: 0 0 15px rgba(0,0,0,0.1);
-      animation: fadeIn 1s ease;
-      transition: background 0.3s;
+    header h1 {
+      margin: 0;
+      font-size: 2.5rem;
     }
-
-    img {
+    header p {
+      font-style: italic;
+      margin-top: 0.5rem;
+    }
+    header img {
       border-radius: 50%;
-      width: 100%;
-      max-width: 150px;
-      height: auto;
-      object-fit: cover;
-      margin-bottom: 20px;
+      width: 150px;
+      height: 150px;
+      margin-top: 1rem;
     }
-
-    .interests {
-      margin-top: 20px;
+    section {
+      padding: 2rem 1rem;
+      max-width: 800px;
+      margin: auto;
     }
-
-    .interest {
-      display: inline-block;
-      background: var(--primary);
-      color: white;
-      padding: 5px 10px;
-      margin: 5px;
-      border-radius: 5px;
-      font-size: 14px;
+    .card {
+      background: #fff;
+      border-radius: 10px;
+      padding: 1.5rem;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      margin-bottom: 2rem;
     }
-
-    button {
-      background-color: var(--primary);
-      color: white;
-      padding: 10px 20px;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-      margin-top: 20px;
-      font-size: 16px;
-      transition: background 0.3s;
+    .skills ul {
+      list-style: none;
+      padding: 0;
     }
-
-    button:hover {
-      background-color: var(--primary-dark);
+    .skills li::before {
+      content: "🔥 ";
     }
-
-    .social {
-      margin-top: 20px;
+    footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      font-size: 0.9rem;
+      color: #777;
     }
-
-    .social a {
-      margin: 0 10px;
+    a {
+      color: #0077cc;
       text-decoration: none;
-      color: inherit;
-      font-size: 18px;
     }
-
-    .social i {
-      font-size: 30px;
-      transition: opacity 0.3s;
-    }
-
-    .social i:hover {
-      opacity: 0.8;
-    }
-
-    /* Фирменные цвета иконок */
-    .social .telegram i {
-      fill: #0088cc; /* Фирменный цвет Telegram */
-    }
-
-    .social .tiktok i {
-      fill: #010002;  /* Черный для TikTok */
-    }
-
-    .social .instagram i {
-      fill: #E4405F;  /* Фирменный красный цвет Instagram */
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
+    a:hover {
+      text-decoration: underline;
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <img src="photo.jpg" alt="Моё фото">
-    <h1>Привет! Меня зовут Андрей</h1>
-    <p>Я учусь веб-разработке, монтажу и хочу построить карьеру, работая на себя. Катаю на велике, работаю на фуре, увлекаюсь спортом, психологией и постоянным развитием. Двигаюсь к свободе — шаг за шагом, каждый день.</p>
-    <div class="interests">
-      <span class="interest">Фронтенд</span>
-      <span class="interest">Лайфстайл о рутине</span>
-      <span class="interest">Психология</span>
-      <span class="interest">Спорт</span>
-      <span class="interest">Свобода и развитие</span>
-    </div>
-    <div class="social telegram">
-      <a href="https://t.me/RayCowperwood" target="_blank" title="Telegram">
-        <i class="fab fa-telegram"></i> Telegram
-      </a>
-    </div>
-    <div class="social tiktok">
-      <a href="https://www.tiktok.com/@raycowperwood" target="_blank" title="TikTok">
-        <i class="fab fa-tiktok"></i> TikTok
-      </a>
-    </div>
-    <div class="social instagram">
-      <a href="https://www.instagram.com/raycowperwood" target="_blank" title="Instagram">
-        <i class="fab fa-instagram"></i> Instagram
-      </a>
-    </div>
+  <header>
+    <img src="photo.jpg" alt="Аватарка">
+    <h1>Бывший нормальный человек</h1>
+    <p>Теперь пытаюсь стать фронтендером. Скоро буду зарабатывать на программировании... или хотя бы на кофе!</p>
+  </header>
 
-  </div>
+  <section class="card">
+    <h2>Обо мне</h2>
+    <p>Привет! Я парень, который бросает работу водителя, чтобы стать фронтенд-разработчиком. Иногда думаю, что сошёл с ума, но потом вспоминаю, что мне нравится кодить. Люблю мемы, HTML и мечтаю зарабатывать на кофе и стабильную психику.</p>
+  </section>
+
+  <section class="card skills">
+    <h2>Навыки</h2>
+    <ul>
+      <li>HTML (не просто &lt;h1&gt;!)</li>
+      <li>CSS (знаю, что такое flex, и горжусь этим)</li>
+      <li>Чуть-чуть JS (но я стараюсь, честно!)</li>
+    </ul>
+  </section>
+
+  <section class="card">
+    <h2>Проекты</h2>
+    <p><strong>Мой сайт</strong> — ты уже на нём! Это же победа 😎</p>
+    <p>Планирую сделать ToDo-лист, калькулятор, и возможно — свою жизнь.</p>
+  </section>
+
+  <section class="card">
+    <h2>Контакты</h2>
+    <p><strong>TikTok:</strong> <a href="https://www.tiktok.com/@nedo_junior" target="_blank">@nedo_junior</a></p>
+    <p><strong>Instagram:</strong> <a href="https://www.instagram.com/raycowperwood" target="_blank">raycowperwood</a></p>
+    <p><strong>GitHub:</strong> <a href="https://github.com/raycowperwood" target="_blank">raycowperwood</a></p>
+    <p><strong>Email:</strong> <a href="mailto:a.tseplyi@gmail.com">a.tseplyi@gmail.com</a></p>
+  </section>
+
+  <footer>
+    <p>2025 &copy; Сделано с любовью и багами</p>
+  </footer>
 </body>
 </html>
