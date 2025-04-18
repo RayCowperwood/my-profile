@@ -20,7 +20,7 @@
     body {
       font-family: Arial, sans-serif;
       background-color: var(--bg-light);
-      color: var(--text-light);
+      color: black;  /* Цвет основного текста изменен на черный */
       text-align: center;
       padding: 50px;
       transition: background 0.3s, color 0.3s;
@@ -107,16 +107,26 @@
     .social a {
       margin: 0 10px;
       text-decoration: none;
+      color: inherit;
+      font-size: 18px;
     }
 
     .social i {
-      font-size: 24px;
-      color: var(--primary);
+      font-size: 30px;
       transition: color 0.3s;
     }
 
     .social i:hover {
       color: var(--primary-dark);
+    }
+
+    /* Добавляем цвета для иконок TikTok и Instagram */
+    .social .tiktok i {
+      color: #010002;  /* Черный для TikTok */
+    }
+
+    .social .instagram i {
+      color: #E4405F;  /* Фирменный красный цвет Instagram */
     }
 
     @keyframes fadeIn {
@@ -139,19 +149,19 @@
     </div>
     <div class="social">
       <a href="https://t.me/RayCowperwood" target="_blank" title="Telegram">
-        <i class="fab fa-telegram"></i>
+        <i class="fab fa-telegram"></i> Telegram
       </a>
     </div>
-    <div class="social">
+    <div class="social tiktok">
       <a href="https://www.tiktok.com/@yourusername" target="_blank" title="TikTok">
         <i class="fab fa-tiktok"></i> TikTok
       </a>
     </div>
-    <div class="social">
+    <div class="social instagram">
       <a href="https://www.instagram.com/raycowperwood" target="_blank" title="Instagram">
         <i class="fab fa-instagram"></i> Instagram
-  </a>
-</div>
+      </a>
+    </div>
 
     <button onclick="window.location.href='https://t.me/RayCowperwood'">Написать в Telegram</button>
   </div>
