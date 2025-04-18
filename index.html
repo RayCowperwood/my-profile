@@ -1,60 +1,133 @@
-
 <!DOCTYPE html>
 <html lang="ru">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Обо мне — Андрей</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <style>
+    :root {
+      --bg-light: #f4f4f4;
+      --text-light: #333;
+      --bg-dark: #1c1c1c;
+      --text-dark: #eee;
+      --card-light: #fff;
+      --card-dark: #2a2a2a;
+      --primary: #007BFF;
+      --primary-dark: #0056b3;
+    }
+
     body {
       font-family: Arial, sans-serif;
-      background-color: #f4f4f4;
-      color: #333;
+      background-color: var(--bg-light);
+      color: var(--text-light);
       text-align: center;
       padding: 50px;
+      transition: background 0.3s, color 0.3s;
     }
-    img {
-      border-radius: 50%;
-      width: 150px;
-      height: 150px;
-      object-fit: cover;
+
+    @media (prefers-color-scheme: dark) {
+      body {
+        background-color: var(--bg-dark);
+        color: var(--text-dark);
+      }
+
+      .container {
+        background: var(--card-dark);
+      }
+
+      a i {
+        color: var(--primary);
+      }
+
+      button {
+        background-color: var(--primary);
+      }
+
+      button:hover {
+        background-color: var(--primary-dark);
+      }
     }
+
     .container {
-      background: white;
+      background: var(--card-light);
       padding: 30px;
       border-radius: 10px;
       display: inline-block;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      max-width: 400px;
+      width: 90%;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+      animation: fadeIn 1s ease;
+      transition: background 0.3s;
     }
+
+    img {
+      border-radius: 50%;
+      width: 100%;
+      max-width: 150px;
+      height: auto;
+      object-fit: cover;
+      margin-bottom: 20px;
+    }
+
     .interests {
       margin-top: 20px;
     }
+
     .interest {
       display: inline-block;
-      background: #007BFF;
+      background: var(--primary);
       color: white;
       padding: 5px 10px;
       margin: 5px;
       border-radius: 5px;
       font-size: 14px;
     }
+
     button {
-      background-color: #007BFF;
+      background-color: var(--primary);
       color: white;
       padding: 10px 20px;
       border: none;
       border-radius: 5px;
       cursor: pointer;
       margin-top: 20px;
+      font-size: 16px;
+      transition: background 0.3s;
     }
+
     button:hover {
-      background-color: #0056b3;
+      background-color: var(--primary-dark);
+    }
+
+    .social {
+      margin-top: 20px;
+    }
+
+    .social a {
+      margin: 0 10px;
+      text-decoration: none;
+    }
+
+    .social i {
+      font-size: 24px;
+      color: var(--primary);
+      transition: color 0.3s;
+    }
+
+    .social i:hover {
+      color: var(--primary-dark);
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
     }
   </style>
 </head>
 <body>
   <div class="container">
-    <img src="photo.jpg" alt="Моё фото" >
+    <img src="photo.jpg" alt="Моё фото">
     <h1>Привет! Меня зовут Андрей</h1>
     <p>Я начинаю новую жизнь, учусь веб-разработке и хочу построить карьеру, работая на себя. Увлекаюсь психологией, спортом и постоянным развитием. Двигаюсь к свободе — шаг за шагом, каждый день.</p>
     <div class="interests">
@@ -62,6 +135,11 @@
       <span class="interest">Психология</span>
       <span class="interest">Спорт</span>
       <span class="interest">Свобода и развитие</span>
+    </div>
+    <div class="social">
+      <a href="https://t.me/RayCowperwood" target="_blank" title="Telegram">
+        <i class="fab fa-telegram"></i>
+      </a>
     </div>
     <button onclick="window.location.href='https://t.me/RayCowperwood'">Написать в Telegram</button>
   </div>
