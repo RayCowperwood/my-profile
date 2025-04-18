@@ -1,9 +1,10 @@
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Обо мне</title>
+  <title>Обо мне — Андрей</title>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -25,6 +26,18 @@
       display: inline-block;
       box-shadow: 0 0 10px rgba(0,0,0,0.1);
     }
+    .interests {
+      margin-top: 20px;
+    }
+    .interest {
+      display: inline-block;
+      background: #007BFF;
+      color: white;
+      padding: 5px 10px;
+      margin: 5px;
+      border-radius: 5px;
+      font-size: 14px;
+    }
     button {
       background-color: #007BFF;
       color: white;
@@ -32,7 +45,7 @@
       border: none;
       border-radius: 5px;
       cursor: pointer;
-      margin-top: 15px;
+      margin-top: 20px;
     }
     button:hover {
       background-color: #0056b3;
@@ -41,10 +54,16 @@
 </head>
 <body>
   <div class="container">
-    <img src="photo.jpg" alt="Моё фото">
-    <h1>Привет, я Андрей</h1>
-    <p>Учусь веб-разработке, хочу работать на себя и строить новую жизнь!</p>
-    <button onclick="alert('Напиши мне в Telegram: @RayCowperwood')">Связаться</button>
+    <img src="photo.jpg" alt="Моё фото" >
+    <h1>Привет! Меня зовут Андрей</h1>
+    <p>Я начинаю новую жизнь, учусь веб-разработке и хочу построить карьеру, работая на себя. Увлекаюсь психологией, спортом и постоянным развитием. Двигаюсь к свободе — шаг за шагом, каждый день.</p>
+    <div class="interests">
+      <span class="interest">Фронтенд</span>
+      <span class="interest">Психология</span>
+      <span class="interest">Спорт</span>
+      <span class="interest">Свобода и развитие</span>
+    </div>
+    <button onclick="window.location.href='https://t.me/RayCowperwood'">Написать в Telegram</button>
   </div>
 </body>
 </html>
