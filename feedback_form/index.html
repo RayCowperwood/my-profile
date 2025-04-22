@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Форма опроса MDlogistika</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link href='https://fonts.googleapis.com/css?family=Source Sans Pro' rel='stylesheet'>
+  </head>
+  <body>
+    <h1 id="title">
+      Форма опроса работников
+      <img
+        id="md-logistika-logo"
+        alt="md-logistika-logo"
+        src="https://www.mdlogistika.cz/storage/2025/03/md-logistika-logo.svg"
+      />
+    </h1>
+    <p id="description">
+      Спасибо за ваш отзыв, Вы помогаете улучшить нашу компанию!
+    </p>
+    <hr />
+    <form
+      id="survey-form"
+      method="post"
+      action="https://register-demo.freecodecamp.org">
+    <fieldset id="personal-info">
+      <legend>Пожалуйста, заполните форму</legend>
+      <label for="name" id="name-label">Имя:</label>
+      <input
+        type="text"
+        id="name"
+        name="name"
+        placeholder="Введите Ваше имя"
+        required
+      />
+
+      <label for="email" id="email-label">Email:</label>
+      <input
+        type="email"
+        id="email"
+        name="email"
+        placeholder="Введите Email"
+        required
+      />
+
+      <label for="age" id="number-label">Возраст:</label>
+      <input
+        type="number"
+        id="number"
+        name="age"
+    
+        min="1"
+        max="120"
+        placeholder="Ваш возраст"
+        required
+      />
+
+      <label for="position">Должность:</label>
+      <input
+        type="text"
+        id="position-label"
+        name="position"
+        placeholder="Введите должность"
+        required
+      />
+    </fieldset>
+    <fieldset id="company-info">
+      <label for="dropdown">Опыт работы в компании:</label>
+      <select id="dropdown" name="experience">
+        <option value="">Выберите</option>
+        <option value="less_than_1_year">Менее 1 года</option>
+        <option value="1_to_3_years">1-3 года</option>
+        <option value="more_than_3_years">Более 3 лет</option>
+      </select>
+    </fieldset>
+    <fieldset id="satisfaction">
+      <legend>Как вы оцениваете нашу компанию?</legend>
+      <label for="excellent"
+        ><input type="radio" id="excellent" name="rating" value="excellent" />
+        Отлично</label
+      >
+      <label for="good"
+        ><input type="radio" id="good" name="rating" value="good" />
+        Хорошо</label
+      >
+      <label for="average"
+        ><input type="radio" id="average" name="rating" value="average" />
+        Средне</label
+      >
+      <label for="poor"
+        ><input type="radio" id="poor" name="rating" value="poor" />
+        Плохо</label
+      >
+    </fieldset>
+
+    <fieldset id="improvements">
+      <legend>Что можно улучшить?</legend>
+      <label for="communication"
+        ><input
+          type="checkbox"
+          id="communication"
+          name="improvement"
+          value="communication"
+        />
+        Коммуникация</label
+      >
+      <label for="workload"
+        ><input
+          type="checkbox"
+          id="workload"
+          name="improvement"
+          value="workload"
+        />
+        Нагрузка</label
+      >
+      <label for="benefits"
+        ><input
+          type="checkbox"
+          id="benefits"
+          name="improvement"
+          value="benefits"
+        />
+        Зарплата</label
+      >
+      <label for="training"
+        ><input
+          type="checkbox"
+          id="training"
+          name="improvement"
+          value="training"
+        />
+        Обучение</label
+      >
+    </fieldset>
+
+    <fieldset id="feedback">
+      <label for="feedback">Ваш отзыв:</label>
+      <textarea id="feedback" name="feedback" rows="4" cols="50"></textarea>
+
+      <button id="submit" type="submit">Отправить</button>
+    </fieldset>
+    </form>
+    <footer id="footer">
+      <p>Все права, принадлежат © 2025 MDlogistika. Учебный проэкт сайта. Без авторских прав.</p>
+  </body>
+</html>
