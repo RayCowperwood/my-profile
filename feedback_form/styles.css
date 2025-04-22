@@ -1,0 +1,101 @@
+form {
+  color: #f1f0f5;
+  text-align: center;
+  font-family: 'Comic sans MS', cursive, sans-serif;
+  text-shadow: 2px 2px 4px #33039b;
+  max-width: 700px;
+}
+h1 {
+  font-size: 2em;
+  color: #bebdc4;
+  text-align: center;
+  font-family: 'Courier New', Courier, monospace;
+  text-shadow: 2px 2px 4px #33039b;
+}
+#md-logistika-logo {
+  display: block;
+  margin: 10px auto;
+  width: 200px;
+  border-radius: 50%;
+  box-shadow: #e1dfef 0px 0px 20px 5px;
+}
+p {
+  margin-top: -15px;
+  color: #bebdc4;
+  text-align: center;
+  text-shadow: 2px 2px 4px #33039b;
+}
+fieldset {
+  border: 2px solid #ccc;
+  padding: 20px;
+  margin: 20px auto;
+  width: 80%;
+  border-radius: 10px;
+}
+legend {
+  font-size: 1.2em;
+  color: #e5daf7;
+  text-align: center;
+}
+#personal-info {
+  margin: 20px auto;
+  width: 80%;
+  border-radius: 10px;
+  text-align: center;
+}
+#personal-info input {
+  display: block;
+  margin-bottom: 0.25em;
+  margin-left: 10%;
+  font-weight: bold;
+  text-align: center;
+  width: 80%;
+  font-family: Impact, sans-serif;
+  color: black;
+}
+
+input[type='text'],
+input[type='email'],
+input[type='password'] {
+  color: red; /* Изменение цвета текста */
+  background-color: #f9f9f9; /* Для проверки */
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+  background: var(--color-darkblue);
+  background-image: linear-gradient(
+      115deg,
+      rgba(58, 58, 158, 0.8),
+      rgba(136, 136, 206, 0.7)
+    ),
+    url(https://cdn.freecodecamp.org/testable-projects-fcc/images/survey-form-background.jpeg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+#improvements {
+  display: block;
+}
+
+label {
+  display: block; /* Каждый чекбокс с текстом на новой строке */
+  margin-bottom: 10px; /* Отступ между строками */
+}
+
+input[type='checkbox'] {
+  margin-right: 8px; /* Отступ между галочкой и текстом */
+  vertical-align: middle; /* Выравнивание галочки по центру текста */
+}
