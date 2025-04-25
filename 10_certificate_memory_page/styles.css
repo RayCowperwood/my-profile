@@ -59,7 +59,7 @@ header p {
   text-align: center;
   border-radius: 20px;
   border: 3px solid #0000007c;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 5px 30px rgba(0, 0, 0, 0.5);
 }
 #tribute-info {
   text-align: left;
@@ -95,12 +95,22 @@ blockquote p {
   font-size: 1.5em;
 }
 hr {
-  background-color: #000000;
+  background-color: #737272;
   border-width: 0;
-  color: #000000;
+  color: #636363;
   height: 2px;
   line-height: 0;
   text-align: left;
-  width: 50%;
   padding: 10px auto;
+  border-style: dashed;
+}
+
+divider {
+  display: block;
+  background-color: transparent;
+  margin: 0;
+  border-radius: 1px;
+  border-style: dashed;
+  border-width: 1px;
+  border-color: #33333362;
 }
