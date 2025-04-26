@@ -44,7 +44,7 @@ a {
 }
 @media (max-width: 768px) {
   body {
-    background-color: rgb(244, 247, 61);
+    background-color: #f7ca8f;
   }
 }
 #code {
