@@ -5,13 +5,13 @@ body {
   position: fixed;
 
   font-family: Impact, Charcoal, sans-serif;
-  font-size: 30px;
+  font-size: 2rem;
   background-color: rgb(110 0 57 / 58%);
-  padding: 30px 30px 100% 30px;
+  padding: 1.8rem 1.5rem 100% 1.5rem;
 }
 main header {
   font-family: Impact, Charcoal, sans-serif;
-  font-size: 20px;
+  font-size: 1.5rem;
   padding-left: 20px;
   text-shadow: 3px 3px 7px rgba(0, 0, 0, 0.5);
 }
@@ -21,7 +21,7 @@ ul {
 }
 nav li {
   text-align: center;
-  padding-bottom: 40px;
+  padding-bottom: 2.2rem;
 }
 a:visited,
 a {
@@ -30,15 +30,15 @@ a {
   text-shadow: 4px 6px 9px rgba(0, 0, 0, 0.5);
 }
 #navbar header {
-  font-size: 40px;
+  font-size: 2rem;
   color: #ca8d04;
   text-shadow: 4px 6px 9px rgba(0, 0, 0, 0.5);
 }
 #main-doc {
   border: 0;
   position: absolute;
-  margin-left: 220px;
-  padding: 20px;
+  margin-left: 11rem;
+  padding: 1.5rem;
   margin-bottom: 110px;
   background-color: #f7ca8f;
 }
