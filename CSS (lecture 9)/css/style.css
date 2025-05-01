@@ -288,6 +288,7 @@ h1::first-letter,
   background: #80b7b3;
   border-radius: 22px;
   box-shadow: 10px 5px 20px #273d46;
+  border: 1px solid #05793f98;
 }
 a,
 a:hover,
@@ -334,7 +335,7 @@ h1,
 }
 
 ul {
-  padding: 0 7vw;
+  padding: 0 10vw;
 }
 
 .image-man {
