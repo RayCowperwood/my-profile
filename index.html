@@ -2,11 +2,13 @@
 <html lang="ru">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Бывший нормальный человек</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Путь в мобильную разработку — Andrii Tseplyi</title>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
     />
     <link
       href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
@@ -14,228 +16,414 @@
     />
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
     <style>
-      * {
+      /* Reset */
+      *, *::before, *::after {
         box-sizing: border-box;
       }
-      body {
+      body, html {
         margin: 0;
+        padding: 0;
+        height: 100%;
         font-family: "Roboto", sans-serif;
-        background-color: #121212;
-        color: #f1f1f1;
-        line-height: 1.6;
+        background: linear-gradient(135deg, #0d1117 0%, #161b22 100%);
+        color: #c9d1d9;
+        scroll-behavior: smooth;
       }
+      body {
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+      }
+
+      /* Container for content */
+      main {
+        flex: 1 0 auto;
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 2rem 1rem 4rem;
+        width: 100%;
+      }
+
+      /* Header */
       header {
-        background-color: #1f1f1f;
-        color: #fff;
-        padding: 2rem 1rem;
+        background: #161b22;
+        color: #58a6ff;
         text-align: center;
+        padding: 3rem 1rem 2.5rem;
+        box-shadow: 0 5px 20px rgba(21, 31, 43, 0.7);
+        position: relative;
+        z-index: 10;
       }
       header img {
+        width: 170px;
+        height: 170px;
         border-radius: 50%;
-        width: 150px;
-        height: 150px;
-        margin-top: 1rem;
         object-fit: cover;
+        border: 4px solid #58a6ff;
+        box-shadow:
+          0 0 8px #58a6ff,
+          0 0 20px #58a6ff66,
+          0 0 30px #58a6ff44;
+        margin-bottom: 1.25rem;
+        transition: transform 0.3s ease;
       }
+      header img:hover {
+        transform: scale(1.05) rotate(3deg);
+        box-shadow:
+          0 0 15px #58a6ff,
+          0 0 40px #58a6ff88,
+          0 0 60px #58a6ffcc;
+      }
+      header h1 {
+        font-weight: 900;
+        font-size: 2.8rem;
+        letter-spacing: 0.05em;
+        margin: 0 0 0.4rem;
+        color: #58a6ff;
+        text-shadow: 0 0 8px #58a6ff99;
+      }
+      header p {
+        font-size: 1.1rem;
+        font-weight: 500;
+        max-width: 480px;
+        margin: 0 auto;
+        color: #8b949e;
+      }
+
+      /* Sections styling */
       section {
-        padding: 2rem 1rem;
-        max-width: 800px;
-        margin: auto;
+        background: #0d1117cc;
+        border-radius: 16px;
+        padding: 2.4rem 2rem;
+        margin-bottom: 2.5rem;
+        box-shadow:
+          0 4px 30px rgba(21, 31, 43, 0.5),
+          inset 0 0 0 1px rgba(255, 255, 255, 0.06);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
       }
-      .card {
-        background: #1e1e1e;
-        border-radius: 10px;
-        padding: 1.5rem;
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
-        margin-bottom: 2rem;
+      section:hover {
+        transform: translateY(-6px);
+        box-shadow:
+          0 10px 40px rgba(88, 166, 255, 0.6),
+          inset 0 0 10px rgba(88, 166, 255, 0.2);
       }
+
+      section h2 {
+        font-weight: 800;
+        font-size: 2rem;
+        margin-bottom: 1rem;
+        color: #58a6ff;
+        letter-spacing: 0.04em;
+        text-shadow: 0 0 6px #58a6ffaa;
+      }
+      section p {
+        font-size: 1.1rem;
+        line-height: 1.65;
+        color: #c9d1d9cc;
+      }
+      section p a {
+        color: #58a6ff;
+        font-weight: 600;
+        text-decoration: none;
+        border-bottom: 1.5px solid transparent;
+        transition: border-color 0.3s ease;
+        word-break: break-word;
+      }
+      section p a:hover,
+      section p a:focus {
+        border-color: #58a6ff;
+        outline: none;
+      }
+
+      /* Skills list */
       .skills ul {
         list-style: none;
-        padding: 0;
+        padding-left: 0;
+        margin: 0;
+        columns: 2;
+        column-gap: 2.5rem;
+      }
+      @media (max-width: 640px) {
+        .skills ul {
+          columns: 1;
+        }
+      }
+      .skills li {
+        position: relative;
+        font-size: 1.15rem;
+        line-height: 1.5;
+        padding-left: 2.2em;
+        margin-bottom: 1.1rem;
+        color: #c9d1d9dd;
+        transition: color 0.3s ease;
       }
       .skills li::before {
-        content: "🔥 ";
+        content: "✔";
+        position: absolute;
+        left: 0;
+        top: 0.12em;
+        font-weight: 900;
+        font-size: 1.3em;
+        color: #58a6ff;
+        text-shadow: 0 0 5px #58a6ffbb;
       }
-      footer {
-        text-align: center;
-        padding: 2rem 1rem;
-        font-size: 0.9rem;
-        color: #aaa;
+      .skills li:hover {
+        color: #58a6ff;
       }
-      a {
-        color: #66aaff;
+
+      /* Contacts icons & links */
+      section[data-aos="fade-left"] p {
+        font-size: 1.1rem;
+        line-height: 1.7;
+        margin-bottom: 1rem;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        color: #c9d1d9dd;
+        transition: color 0.3s ease;
+      }
+      section[data-aos="fade-left"] strong {
+        min-width: 110px;
+        color: #58a6ff;
+        font-weight: 700;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+      section[data-aos="fade-left"] a {
+        color: #58a6ff;
+        font-weight: 600;
         text-decoration: none;
+        border-bottom: 1.5px solid transparent;
       }
-      a:hover {
-        text-decoration: underline;
+      section[data-aos="fade-left"] a:hover,
+      section[data-aos="fade-left"] a:focus {
+        border-color: #58a6ff;
+        outline: none;
       }
+
+      /* Footer */
+      footer {
+        background: #161b22;
+        text-align: center;
+        padding: 1.5rem 1rem;
+        font-size: 0.9rem;
+        color: #484f58;
+        flex-shrink: 0;
+        user-select: none;
+        letter-spacing: 0.04em;
+        box-shadow: inset 0 1px 0 #0d1117;
+      }
+
       /* Preloader */
       #preloader {
         position: fixed;
         top: 0;
         left: 0;
-        width: 100%;
-        height: 100%;
-        background: #121212;
-        z-index: 9999;
+        width: 100vw;
+        height: 100vh;
+        background: #0d1117;
         display: flex;
         align-items: center;
         justify-content: center;
+        z-index: 9999;
+        transition: opacity 0.3s ease;
+      }
+      #preloader.hidden {
+        opacity: 0;
+        pointer-events: none;
+        visibility: hidden;
       }
       .spinner {
-        border: 5px solid #333;
-        border-top: 5px solid #66aaff;
+        width: 60px;
+        height: 60px;
+        border: 6px solid #30363d;
+        border-top: 6px solid #58a6ff;
         border-radius: 50%;
-        width: 50px;
-        height: 50px;
-        animation: spin 1s linear infinite;
+        animation: spin 1.2s linear infinite;
+        box-shadow:
+          0 0 15px #58a6ffaa,
+          0 0 30px #58a6ff55;
       }
       @keyframes spin {
-        0% {
-          transform: rotate(0deg);
-        }
-        100% {
+        to {
           transform: rotate(360deg);
         }
       }
-      /* Scroll to Top */
+
+      /* Scroll to Top Button */
       #scrollToTopBtn {
-        display: none;
         position: fixed;
         bottom: 40px;
         right: 40px;
-        z-index: 99;
-        font-size: 18px;
-        background-color: #66aaff;
-        color: white;
+        z-index: 999;
+        background: #58a6ff;
+        color: #0d1117;
         border: none;
         outline: none;
-        padding: 10px 15px;
-        border-radius: 10px;
+        padding: 12px 18px;
+        font-size: 1.3rem;
+        border-radius: 14px;
         cursor: pointer;
-        transition: background 0.3s ease;
+        box-shadow:
+          0 6px 15px #58a6ffcc;
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.4s ease, visibility 0.4s ease;
+        user-select: none;
+      }
+      #scrollToTopBtn.show {
+        opacity: 1;
+        visibility: visible;
       }
       #scrollToTopBtn:hover {
-        background-color: #5599dd;
+        background: #2f74d0;
+        box-shadow:
+          0 8px 25px #2f74d0cc;
+      }
+
+      /* Link focus styles for accessibility */
+      a:focus-visible {
+        outline: 3px solid #58a6ff;
+        outline-offset: 3px;
       }
     </style>
   </head>
   <body>
     <!-- Preloader -->
-    <div id="preloader">
-      <div class="spinner"></div>
+    <div id="preloader" aria-label="Загрузка страницы">
+      <div class="spinner" role="img" aria-busy="true" aria-live="polite"></div>
     </div>
 
     <header>
-      <img src="photo.jpg" alt="Аватарка" />
-      <h1>Бывший нормальный человек</h1>
-      <p>
-        Теперь пытаюсь стать фронтендером. Скоро буду зарабатывать на
-        программировании... или хотя бы на кофе!
-      </p>
+      <img
+        src="photo.jpg"
+        alt="Фото Андрея Цеплого"
+        loading="lazy"
+        width="170"
+        height="170"
+      />
+      <h1>Andrii Tseplyi</h1>
+      <p>Путь в мобильную разработку Flutter. Учусь, расту и делюсь честным опытом</p>
     </header>
 
-    <section class="card" data-aos="fade-up">
-      <h2>Обо мне</h2>
-      <p>
-        Привет! Я парень, который бросает работу водителя, чтобы стать
-        фронтенд-разработчиком. Иногда думаю, что сошёл с ума, но потом
-        вспоминаю, что мне нравится кодить. Люблю мемы, HTML и мечтаю
-        зарабатывать на кофе и стабильную психику.
-      </p>
-    </section>
+    <main>
+      <section data-aos="fade-up" tabindex="0" aria-labelledby="about-title">
+        <h2 id="about-title">Обо мне</h2>
+        <p>
+          Привет! Я решил сменить профессию и полностью погрузиться в мир
+          мобильной разработки на Flutter. Изучаю Dart и основы программирования,
+          хочу создавать удобные и красивые приложения для Android и iOS. На
+          этом пути делюсь успехами и сложностями, чтобы вдохновлять и
+          мотивировать других.
+        </p>
+      </section>
 
-    <section class="card skills" data-aos="fade-right">
-      <h2>Навыки</h2>
-      <ul>
-        <li>HTML (не просто &lt;h1&gt;!)</li>
-        <li>CSS (знаю, что такое flex, и горжусь этим)</li>
-        <li>Чуть-чуть JS (но я стараюсь, честно!)</li>
-      </ul>
-    </section>
+      <section class="skills" data-aos="fade-right" tabindex="0" aria-labelledby="skills-title">
+        <h2 id="skills-title">Навыки</h2>
+        <ul>
+          <li>Базовое знание синтаксиса Python</li>
+          <li>Изучаю Dart и Flutter — хочу стать мобильным разработчиком</li>
+          <li>Основы ООП (объектно-ориентированного программирования)</li>
+          <li>Работа с Git и GitHub — контроль версий и совместная разработка</li>
+          <li>Навыки отладки и тестирования приложений — написание простых юнит-тестов</li>
+          <li>Основы UI/UX дизайна — понимание принципов создания удобных интерфейсов</li>
+          <li>Опыт работы с VS Code — инструменты разработки</li>
+          <li>Знание основных мобильных платформ (Android и iOS) — особенности и требования</li>
+          <li>Аналитическое мышление и решение задач</li>
+          <li>Умение работать в команде и адаптация под Agile-процессы</li>
+          <li>Самообучение и мотивация — постоянно учусь и развиваюсь</li>
+          <li>Английский язык (технический уровень) — для понимания документации и общения</li>
+        </ul>
+      </section>
 
-    <section class="card" data-aos="zoom-in">
-      <h2>Проекты</h2>
-      <p><strong>Мой сайт</strong> — ты уже на нём! Это же победа 😎</p>
-      <p>Планирую сделать ToDo-лист, калькулятор, и возможно — свою жизнь.</p>
-      <p>
-        <a href="feedback_form/index.html" target="_blank"
-          >Форма обратной связи</a
-        >
-        — это мой первый проект, который я сделал на HTML и CSS на коленке, в
-        рабочей машине за пару часов 🌍
-      </p>
-      <p>
-        <a href="10_certificate_memory_page/index.html" target="_blank">ТЫК</a>
-        — это страничка-дань Виктору Цою 🌟. Минимализм, биография, эпоха — всё,
-        как он сам, легендарно 🎸. Лучшая попытка на скорую руку? Возможно 😅
-      </p>
-      <p>
-        Нарисовал
-        <a href="12_CSS_CAT/index.html" target="_blank">КОТА </a>... кодом👨‍💻✨ .
-        Без фотошопа, без кисточек — только боль, слёзы и div'ы 💔
-      </p>
-      <p>
-        Учебный проект —
-        <a href="CSS (lecture 9)/index.html" target="_blank">Travel</a>, где я
-        пытался не уснуть, пока верстал всё это чудо 😅.
-      </p>
-    </section>
+      <section data-aos="zoom-in" tabindex="0" aria-labelledby="github-title">
+        <h2 id="github-title">Мой GitHub</h2>
+        <p>
+          Здесь я выкладываю свои проекты, упражнения и эксперименты с кодом.
+          Заходи, можешь посмотреть, оценить и поддержать.
+        </p>
+        <p>
+          <a href="https://github.com/RayCowperwood" target="_blank" rel="noopener noreferrer"
+            >https://github.com/RayCowperwood</a
+          >
+        </p>
+      </section>
 
-    <section class="card" data-aos="fade-left">
-      <h2>Контакты</h2>
-      <p>
-        <strong><i class="fab fa-tiktok"></i> TikTok:</strong>
-        <a href="https://www.tiktok.com/@nedo_junior" target="_blank">
-          @nedo_junior
-        </a>
-      </p>
-      <p>
-        <strong><i class="fab fa-instagram"></i> Instagram:</strong>
-        <a href="https://www.instagram.com/raycowperwood" target="_blank"
-          >raycowperwood</a
-        >
-      </p>
-      <p>
-        <strong><i class="fab fa-github"></i> GitHub:</strong>
-        <a href="https://github.com/raycowperwood" target="_blank"
-          >raycowperwood</a
-        >
-      </p>
-      <p>
-        <strong><i class="fas fa-envelope"></i> Email:</strong>
-        <a href="mailto:a.tseplyi@gmail.com">a.tseplyi@gmail.com</a>
-      </p>
-    </section>
+      <section data-aos="fade-left" tabindex="0" aria-labelledby="contacts-title">
+        <h2 id="contacts-title">Контакты</h2>
+        <p>
+          <strong
+            ><i class="fab fa-tiktok" aria-hidden="true"></i> TikTok:</strong
+          >
+          <a
+            href="https://www.tiktok.com/@nedo_junior"
+            target="_blank"
+            rel="noopener noreferrer"
+            >@nedo_junior</a
+          >
+        </p>
+        <p>
+          <strong><i class="fas fa-phone" aria-hidden="true"></i> Телефон:</strong>
+          <a href="tel:+420776096726">+420 776 096 726</a>
+        </p>
+        <p>
+          <strong
+            ><i class="fas fa-envelope" aria-hidden="true"></i> Email:</strong
+          >
+          <a href="mailto:a.tseplyi@gmail.com">a.tseplyi@gmail.com</a>
+        </p>
+      </section>
+    </main>
+
+    <button
+      id="scrollToTopBtn"
+      aria-label="Наверх"
+      title="Наверх"
+      type="button"
+    >
+      <i class="fas fa-arrow-up"></i>
+    </button>
 
     <footer>
-      <p>2025 &copy; Сделано с любовью и багами</p>
+      &copy; 2025 Andrii Tseplyi. Все права защищены.
     </footer>
 
-    <!-- Scroll to top button -->
-    <button id="scrollToTopBtn" title="Наверх">⬆️</button>
-
-    <!-- Scripts -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-      AOS.init({ duration: 1000, once: true });
-      window.addEventListener("load", () => {
-        document.getElementById("preloader").style.display = "none";
+      // Initialize Animate On Scroll
+      AOS.init({
+        duration: 900,
+        easing: "ease-out-cubic",
+        once: true,
       });
-      const scrollToTopBtn = document.getElementById("scrollToTopBtn");
-      window.onscroll = () => {
-        if (
-          document.body.scrollTop > 300 ||
-          document.documentElement.scrollTop > 300
-        ) {
-          scrollToTopBtn.style.display = "block";
+
+      // Preloader fade out
+      window.addEventListener("load", () => {
+        const preloader = document.getElementById("preloader");
+        preloader.classList.add("hidden");
+        setTimeout(() => {
+          preloader.style.display = "none";
+        }, 400);
+      });
+
+      // Scroll to top button
+      const scrollBtn = document.getElementById("scrollToTopBtn");
+
+      window.addEventListener("scroll", () => {
+        if (window.scrollY > 400) {
+          scrollBtn.classList.add("show");
         } else {
-          scrollToTopBtn.style.display = "none";
+          scrollBtn.classList.remove("show");
         }
-      };
-      scrollToTopBtn.onclick = () => {
-        window.scrollTo({ top: 0, behavior: "smooth" });
-      };
+      });
+
+      scrollBtn.addEventListener("click", () => {
+        window.scrollTo({
+          top: 0,
+          behavior: "smooth",
+        });
+      });
     </script>
   </body>
 </html>
