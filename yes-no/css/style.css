@@ -1,0 +1,87 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.wrapper {
+  height: 100vh;
+  background-color: #9590c4;
+  padding-top: 10vh;
+}
+.output-area {
+  box-sizing: border-box;
+  border: 1px solid black;
+  width: 20vw;
+  height: 20vw;
+  position: relative;
+  margin: 0 auto;
+  border-radius: 50%;
+  text-align: center;
+  vertical-align: center;
+  overflow: hidden;
+  background: url(../img/euro.png) 0 0 / contain no-repeat;
+  box-shadow: 4px 6px 9px 4px #ad3b3bc7;
+}
+.output-area-rotate {
+  transform: rotateY(360deg);
+  backface-visibility: visible;
+  transition: 3s;
+}
+#click-to-random {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 15vw;
+  height: 5vw;
+  margin: 5vh 42.5vw;
+  border-radius: 15px;
+  background-color: #9bb6047b;
+  color: rgb(241, 222, 196);
+  font-size: 3vw;
+  font-weight: 700;
+  line-height: 40px;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  box-shadow: 4px 4px 7px 3px #006789c7;
+  text-align: center;
+}
+.answer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 20vw;
+  font-size: 10vw;
+  font-weight: 700;
+  line-height: 40px;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  color: #480a86c4;
+  text-shadow: 3px 4px 4px #372727c7;
+  text-decoration: solid;
+}
+#click-to-random:active {
+  transform: scale(1.1, 1.1);
+  transition: 1s;
+}
+@media (max-width: 768px) {
+  .wrapper {
+    padding-top: 5vh;
+  }
+
+  .output-area {
+    width: 40vw;
+    height: 40vw;
+    background-size: cover;
+  }
+
+  .answer {
+    height: 40vw;
+    font-size: 20vw;
+  }
+
+  #click-to-random {
+    width: 60vw;
+    height: 15vw;
+    font-size: 7vw;
+    margin: 5vh auto;
+  }
+}
