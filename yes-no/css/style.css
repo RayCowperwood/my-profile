@@ -47,9 +47,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 15vw;
-  height: 5vw;
-  margin: 5vh 42.5vw;
+  width: 30vw;
+  height: 7vw;
+  margin: 5vh auto;
   border-radius: 15px;
   background-color: #9bb6047b;
   color: rgb(241, 222, 196);
