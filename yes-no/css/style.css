@@ -110,3 +110,6 @@
 .wrapper {
   background: url(../img/bg.jpg) top left / contain repeat-y;
 }
+.wrapperBad {
+  background: url(../img/bad.png) top left / contain repeat-y;
+}
