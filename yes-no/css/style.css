@@ -7,7 +7,7 @@
   font-size: 32px;
   text-align: center;
   font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
-  color: #261f29d9;
+  color: #ebe8ecd9;
   text-shadow: #571b01;
   font-weight: normal;
 }
@@ -106,4 +106,7 @@
   width: 100%;
   height: 10px;
   background-color: rgba(203, 11, 11, 0.379);
+}
+.wrapper {
+  background: url(../img/bg.jpg) top left / contain repeat-y;
 }
